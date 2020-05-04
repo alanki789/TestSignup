@@ -25,34 +25,34 @@ public class Test {
 
 		System.setProperty("webdriver.chrome.driver" , "C:\\Alankrita\\chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
-        driver.get("http://elab-stg.labyrinthelab.com/create_learner_account.php");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        	driver.get("http://elab-stg.labyrinthelab.com/create_learner_account.php");
+        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.findElement(By.xpath("//input[@id='fname']")).sendKeys(FirstName);
-        driver.findElement(By.xpath("//input[@id='lname']")).sendKeys(Lastname);
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(EmailID);
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys(Password);
-        driver.findElement(By.xpath("//input[@id='cpassword']")).sendKeys(Password);
-        driver.findElement(By.xpath("//input[@type='checkbox']")).click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        	driver.findElement(By.xpath("//input[@id='fname']")).sendKeys(FirstName);
+        	driver.findElement(By.xpath("//input[@id='lname']")).sendKeys(Lastname);
+        	driver.findElement(By.xpath("//input[@id='email']")).sendKeys(EmailID);
+        	driver.findElement(By.xpath("//input[@id='password']")).sendKeys(Password);
+        	driver.findElement(By.xpath("//input[@id='cpassword']")).sendKeys(Password);
+        	driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.findElement(By.id("createAccount")).click();
+        	driver.findElement(By.id("createAccount")).click();
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        	driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        	WebDriverWait wait = new WebDriverWait(driver, 60);
 
-        wait.until(ExpectedConditions.titleContains("Labyrinth eLab: Home"));
+        	wait.until(ExpectedConditions.titleContains("Labyrinth eLab: Home"));
 
-        String actualURL = driver.getCurrentUrl();
+        	String actualURL = driver.getCurrentUrl();
 
-        if (actualURL.equals(errorURL))
-        	{
-        	System.out.println("Invalid Username or Password Page");
-        	}
-        else
-        {
-        	System.out.println("Account Creation Failed");
-        }
-	}
+        	if (actualURL.equals(errorURL))
+        		{
+        		System.out.println("Invalid Username or Password Page");
+        		}
+        	else
+        		{
+        		System.out.println("Account Creation Failed");
+        		}
+		}
 }
