@@ -10,6 +10,8 @@ public class Test {
 		System.setProperty("webdriver.chrome.driver" , "C:\\Alankrita\\chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
         driver.get("http://elab-stg.labyrinthelab.com/create_learner_account.php");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 	    driver.findElement(By.xpath("//input[@id='fname']")).sendKeys("Alankrita");
 	    driver.findElement(By.xpath("//input[@id='lname']")).sendKeys("Phillip");
 	    driver.findElement(By.xpath("//input[@id='email']")).sendKeys("alanki.alankrita7@gmail.com");
